@@ -4,7 +4,7 @@
 //based on specific criteria
 
 
-let names = ["Cody", "Casey", "Clayton", "Kara", "Hope"];
+//let names = ["Cody", "Casey", "Clayton", "Kara", "Hope"];
 
 //without map
 // function greet(person) {
@@ -31,7 +31,7 @@ let names = ["Cody", "Casey", "Clayton", "Kara", "Hope"];
 // console.log(roundedGrades);
 
 
-//isPalindrome
+/*isPalindrome
 const isPalindrome = string => string.replaceAll(' ', '') === string.replaceAll(' ', '').split('').reverse().join('');
 
 let myString = "a man a plan a canal panama";
@@ -47,3 +47,29 @@ let myStringSplitReverseJoin = myStringSplitReverse.join('');
 console.log(myStringSplitReverseJoin);
 
 console.log(isPalindrome("a man a plan a canal panama"));
+*/
+
+// Split into array, capitalize the first letter, join back together
+
+function capitalizeWords(word){
+    //split the word into array of characters
+    let letters = word.split('');
+    //capitalize the first letter, resave in the first spot
+    letters[0] = letters[0].toUpperCase('');
+    //join the letters back into string and store in variable
+    let capWord = letters.join('');
+    return capWord;
+}
+
+function capitalizeWordMap(words){
+    return words.map(word => capitalizeWords(word));
+}
+
+//take the first letter , capitalize it, add it to slice of remaining letters
+function capitalizeWordsMap2(words){
+    return words.map(word.charAt(0).toUpperCase() + words.slice(1));
+}
+
+console.log(capitalizeWords('chicken'));
+let myWords = ['apple','banana','cherry'];
+console.log(capitalizeWordMap(myWords));
